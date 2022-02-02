@@ -64,7 +64,15 @@ const initialState = {
 }
 
 function reducer(state = initialState, action) {
-    return state;
+    switch (action.type) {
+        case 'ADD_POSTS':
+            return {
+                ...state,
+                posts: action.payload.newPosts
+            }
+            default:
+                return state;
+    }
 }
 
 export default reducer;
